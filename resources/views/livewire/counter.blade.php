@@ -7,3 +7,4 @@
     こんにちは、{{ $name }}さん<br>
     <input wire:model.defer="name" type="text">
 </div>
+
