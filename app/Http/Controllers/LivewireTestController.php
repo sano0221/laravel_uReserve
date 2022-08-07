@@ -12,4 +12,9 @@ class LivewireTestController extends Controller
 
         
     }
+
+    public function register()
+    {
+        return view("livewire-test.register");
+    }
 }

@@ -5,5 +5,7 @@
     <div class="mb-8"></div> 
     
     こんにちは、{{ $name }}さん<br>
-    <input wire:model.defer="name" type="text">
+    <input wire:model="name" type="text">
+
+    <button wire:mouseover="mouseOver">マウスを合わせてね/button>
 </div>
