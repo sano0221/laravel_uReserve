@@ -6,7 +6,7 @@
         livewireテスト
         <div>
             @if (session()->has('message'))
-                <div class="alert alert-success">
+                <div class="">
                     {{ session('message') }}
                 </div>
             @endif
