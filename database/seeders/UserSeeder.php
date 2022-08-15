@@ -26,13 +26,13 @@ class UserSeeder extends Seeder
         ],
         [
             "name" => "manager",
-            "email" => "manager@admin.com",
+            "email" => "manager@manager.com",
             "password" =>Hash::make("password123"),
             "role" => 5
         ],
         [
             "name" => "test",
-            "email" => "test@admin.com",
+            "email" => "test@test.com",
             "password" =>Hash::make("password123"),
             "role" => 9
         ]
