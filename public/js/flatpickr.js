@@ -2888,12 +2888,17 @@ __webpack_require__.r(__webpack_exports__);
   maxDate: new Date().fp_incr(30) // 14 days from now
 
 });
-(0,flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])("#start_time", {
-  "locale": flatpickr_dist_l10n_ja_js__WEBPACK_IMPORTED_MODULE_1__.Japanese
-});
-(0,flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])("#end_time", {
-  "locale": flatpickr_dist_l10n_ja_js__WEBPACK_IMPORTED_MODULE_1__.Japanese
-});
+var setting = {
+  "locale": flatpickr_dist_l10n_ja_js__WEBPACK_IMPORTED_MODULE_1__.Japanese,
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
+  time_24hr: true,
+  minTime: "10:00",
+  maxTime: "20:00"
+};
+(0,flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])("#start_time", setting);
+(0,flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])("#end_time", setting);
 })();
 
 /******/ })()
