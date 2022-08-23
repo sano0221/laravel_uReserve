@@ -36,17 +36,17 @@
 
                         <div class="mt-4">
                             <x-jet-label for="event_date" value="イベント日時" />
-                            <x-jet-input id="event_date" class="block mt-1 w-full" type="password" name="event_date" required />
+                            {{ $eventDate }}
                         </div>
 
                         <div class="mt-4">
                             <x-jet-label for="start_time" value="開始時間" />
-                            <x-jet-input id="start_time" class="block mt-1 w-full" type="text" name="start_time" required />
+                            {{ $startTime }}
                         </div>
 
                         <div class="mt-4">
                             <x-jet-label for="end_time" value="終了時間" />
-                            <x-jet-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" start_time />
+                            {{ $endTime }}
                         </div>
                     </div>
 
@@ -56,11 +56,15 @@
                             {{ $event->max_people }}
                         </div>
                         <div class="flex space-x-4 justify-around">
-                            <input type="radio" name="is_visible" value="1" checked>表示
-                            <input type="radio" name="is_visible" value="0">非表示
+                            @if($event->is_visible)
+                                表示中
+                            @else
+                                非表示
+                            @endif    
+                    
                         </div>
                         <x-jet-button class="ml-4">
-                            編集する1
+                            編集する
                         </x-jet-button>
                     </div>
                 </form>
