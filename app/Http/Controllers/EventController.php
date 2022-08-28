@@ -71,7 +71,7 @@ class EventController extends Controller
         $endTime = $event->endTime;
       
         // dd($eventDate, $startTime, $endTime);
-        return view('manager.events.show',compact('event', 'eventDate', 'startTime', 'endTime')); 
+        return view('manager.events.show', compact('event', 'eventDate', 'startTime', 'endTime')); 
     }
 
     

@@ -31,7 +31,7 @@
 
                     <div class="mt-4">
                         <x-jet-label for="information" value="イベント詳細" />
-                        <x-textarea row="3" id="information" class="block mt-1 w-full" name="information" >{{ $event->information }}</x-textarea>
+                        <x-textarea row="3" id="information" class="block mt-1 w-full" name="information">{{ $event->information }} </x-textarea>
                     </div>
 
                     <div class="md:flex justify-between">
@@ -43,12 +43,12 @@
 
                         <div class="mt-4">
                             <x-jet-label for="start_time" value="開始時間" />
-                            <x-jet-input id="start_time" class="block mt-1 w-full" type="text" name="start_time" value="{{ $event->startTime }}"required />
+                            <x-jet-input id="start_time" class="block mt-1 w-full" type="text" name="start_time" value="{{ $event->startTime }}" required />
                         </div>
 
                         <div class="mt-4">
                             <x-jet-label for="end_time" value="終了時間" />
-                            <x-jet-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" value="{{ $event->endTime }}" required />
+                            <x-jet-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" value="{{ $event->endTime }}" required/>
                         </div>
                     </div>
 
@@ -58,10 +58,8 @@
                             <x-jet-input id="max_people" class="block mt-1 w-full" type="number" name="max_people" value="{{ $event->max_people }}" required />
                         </div>
                         <div class="flex space-x-4 justify-around">
-                            <input type="radio" name="is_visible" value="1" @if($event->is_visible===1){checked}@endif>表示
-                            <input type="radio" name="is_visible" value="0" @if($event->is_visible===0){checked}@endif >非表示
-
-                            {{dd($event->is_visible);}}
+                            <input type="radio" name="is_visible" value="1" @if($event->is_visible===1) checked @endif >表示
+                            <input type="radio" name="is_visible" value="0" @if($event->is_visible===0) checked @endif >非表示
                         </div>
                         <x-jet-button class="ml-4">
                             更新する
