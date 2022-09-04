@@ -11,11 +11,6 @@ use App\Services\EventService;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $today = Carbon::today();
@@ -77,12 +72,32 @@ class EventController extends Controller
     public function show(Event $event)
     {
         $event = Event::findOrFail($event->id);
+
+
+        $users = $event->users;
+
+        $reservations = [];
+
+        foreach($users as $user)
+        {
+            $reservationInfo = [
+                'name' => $user->name,
+                'number_of_people' => $user->pivot->number_of_people,
+                'canceled_date' => $user->pivot->canceled_date
+            ];
+
+            array_push($reservations, $reservationInfo);
+        }
+
+        // dd($reservations);
+
+
         $eventDate = $event->eventDate;
         $startTime = $event->startTime;
         $endTime = $event->endTime;
-      
+    
         // dd($eventDate, $startTime, $endTime);
-        return view('manager.events.show', compact('event', 'eventDate', 'startTime', 'endTime')); 
+        return view('manager.events.show', compact('event', 'users', 'reservations', 'eventDate', 'startTime', 'endTime')); 
     }
 
     

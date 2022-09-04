@@ -76,5 +76,24 @@
             </div>
         </div>
     </div>
+
+
+    <div class="pt-4 pb-2">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="max-w-2xl py-4 mx-auto">
+                    @foreach($reservations as $reservation)
+                        @if(!$users->isEmpty())
+                            予約状況
+                            @if(is_null($reservation['canceled_date']))
+                                {{ $reservation['name']}}
+                                {{ $reservation['number_of_people'] }}
+                            @endif
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="{{ mix('js/flatpickr.js') }}"></script>
 </x-app-layout>
