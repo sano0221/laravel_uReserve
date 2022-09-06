@@ -1,5 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import "flatpickr/dist/flatpickr.css";
+
+.event_calendar{
+    width: 1000px;
+}
