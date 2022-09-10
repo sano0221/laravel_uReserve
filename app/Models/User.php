@@ -68,3 +68,5 @@ class User extends Authenticatable
         ->withPivot('id', 'number_of_people', 'canceled_date');
     }
 }
+
+
