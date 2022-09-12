@@ -19,3 +19,6 @@ class ReservationController extends Controller
         return view('event-detail', compact('event'));
     }
 }
+
+
+
