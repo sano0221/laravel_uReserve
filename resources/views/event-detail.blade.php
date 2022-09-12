@@ -55,6 +55,16 @@
                             <x-jet-label for="max_people" value="定員" />
                             {{ $event->max_people }}
                         </div>
+                        <div class="mt-4">
+                            <x-jet-label for="reserved_people" value="定員" />
+                            <select name="reserved_id">
+                                @for($i=1; $i <= $reservablePeople; $i++)
+                                <option value="{{$i}}">{{$i}}</option>
+                                @endfor
+
+                            </select>
+
+                        </div>
 
                         <x-jet-button class="ml-4">
                             予約する
