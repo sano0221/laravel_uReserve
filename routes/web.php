@@ -51,4 +51,3 @@ Route::controller(LivewireTestController::class)
 });
 
 Route::get("alpine-test/index", [AlpineTestController::class, "index"]);
-
