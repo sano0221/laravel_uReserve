@@ -47,7 +47,6 @@ class ReservationController extends Controller
 
         return view('event-detail', compact('event', 'reservablePeople', 'isReserved'));
     }
-
     public function reserve(Request $request)
         {
             $event = Event::findOrfail($request->id);
@@ -81,4 +80,3 @@ class ReservationController extends Controller
 
 
 }
-    
