@@ -22,6 +22,7 @@ class ReservationController extends Controller
     {
         $event = Event::findOrfail($id);
 
+
         $reservedPeople = DB::table('reservations')
         ->select('event_id', DB::raw('sum(number_of_people) as number_of_people'))
         ->whereNull('canceled_date')
@@ -36,9 +37,15 @@ class ReservationController extends Controller
         else{
             $reservablePeople = $event->max_people;
         }
-        
 
-        return view('event-detail', compact('event', 'reservablePeople'));
+        $isReserved = Reservation::where('user_id', '=', Auth::id())
+        ->where('event_id', '=', $id)
+        ->where('canceled_date', '=', null)
+        ->latest()
+        ->first();
+
+
+        return view('event-detail', compact('event', 'reservablePeople', 'isReserved'));
     }
 
     public function reserve(Request $request)

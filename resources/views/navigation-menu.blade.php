@@ -16,6 +16,11 @@
                         イベントカレンダー
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('mypage.index') }}" :active="request()->routeIs('mypage.index')">
+                        マイページ
+                    </x-jet-nav-link>
+                </div>
                 @can("manager-higher")
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
@@ -145,6 +150,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 イベントカレンダー
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('mypage.index') }}" :active="request()->routeIs('mypage.index')">
+                マイページ
             </x-jet-responsive-nav-link>
             @can("manager-higher")
             <x-jet-responsive-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
